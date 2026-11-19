@@ -1,0 +1,4 @@
+# For reproduce_tables.py only (CPU, no GPU). Tested with Python 3.12.3, pandas 3.0.6, numpy 2.5.4.
+# The notebook's own packages are installed in its first cell (unpinned; versions were not recorded).
+pandas
+numpy
