@@ -2,7 +2,7 @@
 
 The experiment compares a word-level attack (TextFooler) with iterative LLM sentence rewriting on SST-2 and measures how often an adversarial example built against one classifier also fools the other two.
 
-Repository: `[TODO: repository link, accessible to the instructor and TA]`
+Repository: https://github.com/jiminhwg/NLP-2023049998
 
 ## Contents
 
