@@ -1,13 +1,13 @@
 # Transferability of LLM-generated adversarial examples across BERT-family models
 
-Code for the HW2 paper (CSE4057, Hanyang University). The experiment compares a word-level attack (TextFooler) with iterative LLM sentence rewriting on SST-2 and measures how often an adversarial example built against one classifier also fools the other two.
+The experiment compares a word-level attack (TextFooler) with iterative LLM sentence rewriting on SST-2 and measures how often an adversarial example built against one classifier also fools the other two.
 
 Repository: `[TODO: repository link, accessible to the instructor and TA]`
 
 ## Contents
 
 ```
-hw2_experiment_final.ipynb   attacks and all analyses; needs a GPU (run on Kaggle, Tesla T4)
+main.ipynb                   attacks and all analyses; needs a GPU (run on Kaggle, T4)
 reproduce_tables.py          recomputes the result tables from the saved results; CPU only
 requirements.txt             packages for reproduce_tables.py
 README.md
