@@ -7,7 +7,7 @@ Repository: https://github.com/jiminhwg/NLP-2023049998
 ## Contents
 
 ```
-hw2_experiment_final.ipynb   attacks and all analyses; needs a GPU (run on Kaggle, Tesla T4)
+main.ipynb   attacks and all analyses; needs a GPU (run on Kaggle, Tesla T4)
 reproduce_tables.py          recomputes the tables from the saved results; CPU only
 requirements.txt             packages for reproduce_tables.py
 README.md
@@ -19,7 +19,6 @@ results/                     saved outputs of the reported run (about 0.7 MB in 
   handcheck.csv                sampled examples with method and source (not blind)
   handcheck_blind.csv          the same sample, shuffled, without the method; contains my labels
   handcheck_key.csv            method and source for each row of handcheck_blind.csv
-  random_examples.csv          seeded random sample of valid and failed attacks
 ```
 
 Model checkpoints are not included; they are downloaded from Hugging Face at run time.
