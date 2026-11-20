@@ -3,7 +3,6 @@
 The experiment compares a word-level attack (TextFooler) with iterative LLM sentence rewriting on SST-2 and measures how often an adversarial example built against one classifier also fools the other two.
 
 Repository: https://github.com/jiminhwg/NLP-2023049998
-
 ## Contents
 
 ```
@@ -19,6 +18,7 @@ results/                     saved outputs of the reported run (about 0.7 MB in 
   handcheck.csv                sampled examples with method and source (not blind)
   handcheck_blind.csv          the same sample, shuffled, without the method; contains my labels
   handcheck_key.csv            method and source for each row of handcheck_blind.csv
+  random_examples.csv          seeded random sample of valid and failed attacks (written by reproduce_tables.py)
 ```
 
 Model checkpoints are not included; they are downloaded from Hugging Face at run time.
@@ -27,7 +27,7 @@ Model checkpoints are not included; they are downloaded from Hugging Face at run
 
 **Tables script (`reproduce_tables.py`).** Python 3 with `pandas` and `numpy`. It was tested in a clean directory with Python 3.12.3, pandas 3.0.6 and numpy 2.5.4. That is not the environment of the reported run.
 
-**Full pipeline (notebook).** Kaggle notebook with Internet and a GPU (Tesla T4), Python 3.13. The install cell has no version pins, and the package versions of the reported run were not recorded. `[TODO: add package versions here if you can obtain them, and say how]`
+**Full pipeline (notebook).** Kaggle notebook with Internet and a GPU (Tesla T4), Python 3.13. The install cell has no version pins, and the package versions of the reported run were not recorded.
 
 Models and data come from Hugging Face and are not pinned to a revision (the same list is Table 4 of the paper):
 
@@ -49,7 +49,7 @@ Total run time of the reported run (both attacks, all three sources): 3 h 14 min
 
 ```
 pip install -r requirements.txt
-python reproduce_tables.py --results_dir results/ --out_csv per_pair_table.csv --examples_csv random_examples_regenerated.csv
+python reproduce_tables.py --results_dir results/ --out_csv per_pair_table.csv --examples_csv results/random_examples.csv
 ```
 
 The script prints one block per result. Table numbers refer to the HW2 draft.
@@ -81,7 +81,7 @@ Section 5.3 of the notebook regenerates the three `handcheck*.csv` files and ove
 
 ### Additional outputs not reported in the draft
 
-The script also prints the mean edit ratio and similarity of valid examples (edit-size terciles), how many TextFooler examples the judge removes and how those transfer, how concentrated the valid examples are across sentences, the transfer rate by round of success, and Wilson intervals for the hand-check counts (typed in from the notebook output). `random_examples.csv` is a seeded random sample of 3 valid and 3 failed attacks per method.
+The script also prints the mean edit ratio and similarity of valid examples (edit-size terciles), how many TextFooler examples the judge removes and how those transfer, how concentrated the valid examples are across sentences, the transfer rate by round of success, and Wilson intervals for the hand-check counts (typed in from the notebook output). `results/random_examples.csv`, written by the command above, is a seeded random sample of 3 valid and 3 failed attacks per method (columns: method, source, sid, outcome, sim, queries, text, adv).
 
 ## Random seeds
 
